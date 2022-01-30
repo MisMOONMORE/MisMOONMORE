@@ -107,3 +107,20 @@ int main(void)
     printf("%d\n",ans);
     return 0;
 }
+void output_file()
+{
+    FILE *fp;
+    char str[102] = {0}, strTemp[100];
+    if( (fp=fopen("C:\\Users\\Enolaliu\\Desktop\\winter2\\dataset\\data\\res.txt", "at+")) == NULL )
+    {
+        puts("Fail to open file!");
+        exit(0);
+    }
+    printf("Input a string:");
+    gets(strTemp);
+    strcat(str, "\n");
+    strcat(str, strTemp);
+    fputs(str, fp);
+    fclose(fp);
+    return 0;
+}
